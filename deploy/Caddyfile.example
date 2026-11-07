@@ -1,0 +1,20 @@
+# Exemple pour Caddy installé sur le même hôte que le port Docker local.
+# Remplacer le domaine et l'ajouter à GW_ALLOWED_HOSTS avant utilisation.
+api.example.com {
+    request_body {
+        max_size 16MiB
+    }
+    @internal path /readyz /openapi.json
+    respond @internal 404
+    reverse_proxy 127.0.0.1:8787 {
+        flush_interval -1
+        transport http {
+            dial_timeout 5s
+            response_header_timeout 190s
+        }
+    }
+    header {
+        X-Content-Type-Options nosniff
+        -Server
+    }
+}

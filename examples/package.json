@@ -1,0 +1,6 @@
+{
+  "name": "passerelle-sdk-examples",
+  "private": true,
+  "type": "module",
+  "dependencies": { "openai": "7.47.0" }
+}

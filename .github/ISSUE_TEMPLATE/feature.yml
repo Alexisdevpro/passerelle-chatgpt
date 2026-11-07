@@ -1,0 +1,11 @@
+name: Feature request / Proposer une évolution
+description: Explain the use case and expected behavior.
+body:
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case and proposed behavior
+      description: Describe your workflow and any compatibility constraints.
+    validations:
+      required: true
+

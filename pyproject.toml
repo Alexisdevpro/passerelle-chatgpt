@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "passerelle-personnelle"
+version = "0.4.0"
+description = "Passerelle personnelle OpenAI-compatible : ChatGPT OAuth officiel ou Ollama local"
+requires-python = ">=3.12"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [{name = "Alexis"}]
+keywords = ["chatgpt", "oauth", "gateway", "openai-compatible", "self-hosted"]
+dependencies = ["fastapi", "uvicorn", "httpx", "pydantic-settings", "cryptography", "PyJWT[crypto]", "filelock"]
+
+[project.urls]
+Homepage = "https://github.com/Alexisdevpro/passerelle-chatgpt"
+Repository = "https://github.com/Alexisdevpro/passerelle-chatgpt"
+Issues = "https://github.com/Alexisdevpro/passerelle-chatgpt/issues"
+
+[project.scripts]
+passerelle = "gateway.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["gateway*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]

@@ -1,0 +1,6 @@
+*
+!gateway/
+!gateway/*.py
+!requirements.lock
+!Dockerfile
+

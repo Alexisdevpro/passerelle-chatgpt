@@ -1,0 +1,18 @@
+name: Bug report / Signaler un bug
+description: Describe a reproducible problem without private data.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Expected and actual behavior
+      description: Include minimal steps. Do not include keys, tokens, session exports or private prompts.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Version, OS, Python or Docker, provider, endpoint, sanitized error code.
+    validations:
+      required: true
+
